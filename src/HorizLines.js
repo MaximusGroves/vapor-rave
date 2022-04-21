@@ -39,11 +39,11 @@ const HorizLines = ({ width, height, horizon }) => {
               strokeWidth={idx / 10}
               filter={`drop-shadow(${(horizTotal - idx) / 5}px ${
                 (horizTotal - idx) / 5
-              }px ${(horizTotal - idx) * 4}px ${glowColor}) drop-shadow(-${
+              }px ${(horizTotal - idx) * 4}px ${glowColor}) 
+              drop-shadow(-${(horizTotal - idx) / 5}px -${
                 (horizTotal - idx) / 5
-              }px -${(horizTotal - idx) / 5}px ${
-                horizTotal - idx
-              }px ${glowColor})`}
+              }px ${horizTotal - idx}px ${glowColor}) 
+              `}
 
               // filter="drop-shadow(10px 10px 200px #ff00ff) drop-shadow(-10px -10px 50px #ff00ff)"
             />
