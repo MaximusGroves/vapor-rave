@@ -31,11 +31,6 @@
   color: #61dafb;
 }
 
-svg path {
-  stroke: #ff00ff;
-  /* filter: drop-shadow(10px 10px 200px #ff00ff)
-    drop-shadow(-10px -10px 50px #ff00ff); */
-}
 
 @keyframes App-logo-spin {
   from {
