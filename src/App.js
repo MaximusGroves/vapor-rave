@@ -7,6 +7,7 @@ import useWindowSize from "./useWindowSize";
 import HorizAnimGroup from "./HorizAnimGroup";
 import VertLines from "./VertLines";
 import SpotifyPlayer from "react-spotify-player";
+import GithubIcon from "./GithubIcon";
 
 function App() {
   const windowSize = useWindowSize();
@@ -30,6 +31,25 @@ function App() {
       }}
     >
       <header className="App-header">
+        <div style={{ position: "absolute", top: 0, left: 0, zIndex: 9999 }}>
+          <a
+            href="https://github.com/MaximusGroves/vapor-rave"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GithubIcon />
+          </a>
+        </div>
+        <div style={{ position: "absolute", top: 0, right: 0 }}>
+          <SpotifyPlayer
+            uri="spotify:playlist:37i9dQZF1DXdLEN7aqioXM?si=7b081c1ccf4a4b5d"
+            size={{ width: 300, height: 80 }}
+            view={"list"} //or coverart
+            theme={"black"}
+          />
+        </div>
+      </header>
+      <body>
         <img src={logo} className="App-logo" alt="logo" />
         <VertLines
           width={screenWidth}
@@ -43,15 +63,7 @@ function App() {
           duration={15000}
           total={22}
         />
-        <div style={{ position: "absolute", top: 0, right: 0 }}>
-          <SpotifyPlayer
-            uri="spotify:playlist:37i9dQZF1DXdLEN7aqioXM?si=7b081c1ccf4a4b5d"
-            size={{ width: 300, height: 80 }}
-            view={"list"} //or coverart
-            theme={"black"}
-          />
-        </div>
-      </header>
+      </body>
     </div>
   );
 }
