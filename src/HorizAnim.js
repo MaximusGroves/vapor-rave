@@ -11,7 +11,7 @@ const HorizAnim = ({ width, height, horizon, start = 0, duration = 1000 }) => {
 
   const glowColor = "#ff00ff";
 
-  const colors = useSpring({
+  const [{ stroke }] = useSpring(() => ({
     loop: true,
     to: [
       // { stroke: "#ffffff" },
@@ -22,7 +22,7 @@ const HorizAnim = ({ width, height, horizon, start = 0, duration = 1000 }) => {
     from: { stroke: "#ffff00" },
     reset: true,
     config: { duration: 3000 },
-  });
+  }));
 
   const [{ x }] = useSpring(() => ({
     loop: start === 0,
@@ -55,13 +55,12 @@ const HorizAnim = ({ width, height, horizon, start = 0, duration = 1000 }) => {
               drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
               `
           ),
+          stroke: stroke,
         }}
       >
-        <animated.div style={colors}>
-          <Svg width={width} height={height}>
-            <Line sy={0} ey={0} sx={0} ex={width || 0} />
-          </Svg>
-        </animated.div>
+        <Svg width={width} height={height}>
+          <Line sy={0} ey={0} sx={0} ex={width || 0} />
+        </Svg>
       </animated.div>
     </div>
   );
