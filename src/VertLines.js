@@ -29,6 +29,8 @@ const VertLines = ({ width, height, horizon }) => {
       { stroke: "#ffff00" },
       { stroke: "#ffffff" },
     ],
+    from: { stroke: "#ffffff" },
+    reset: true,
     config: { duration: 2000 },
   });
 

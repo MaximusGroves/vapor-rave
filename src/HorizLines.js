@@ -23,6 +23,8 @@ const HorizLines = ({ width, height, horizon }) => {
       { stroke: "#ff00ff" },
       { stroke: "#ffff00" },
     ],
+    from: { stroke: "#ffff00" },
+    reset: true,
     config: { duration: 3000 },
   });
 
