@@ -31,6 +31,9 @@
   color: #61dafb;
 }
 
+#line38 {
+  transform: translateY(10px);
+}
 
 @keyframes App-logo-spin {
   from {

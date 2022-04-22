@@ -28,12 +28,22 @@ const HorizLines = ({ width, height, horizon }) => {
     config: { duration: 3000 },
   });
 
+  // const motion = useSpring({
+  //   loop: true,
+  //   to: { transform: `translateY(${height - horizon}px)` },
+  //   from: { transform: `translateY(${0}px)` },
+  //   reset: true,
+  //   config: { duration: 500 },
+  // });
+
   return (
     <div style={{ position: "absolute", top: 0, left: 0 }}>
       <animated.div style={styles}>
+        {/* <animated.div style={motion}> */}
         <Svg width={width} height={height}>
           {lineYArray.map((val, idx) => (
             <Line
+              id={`line${idx}`}
               sy={horizon + at50 - val || 0}
               ey={horizon + at50 - val || 0}
               sx={0}
@@ -52,6 +62,7 @@ const HorizLines = ({ width, height, horizon }) => {
           ))}
         </Svg>
       </animated.div>
+      {/* </animated.div> */}
     </div>
   );
 };

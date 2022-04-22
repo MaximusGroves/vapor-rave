@@ -2,7 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 import useWindowSize from "./useWindowSize";
-import HorizLines from "./HorizLines";
+//import HorizLines from "./HorizLines";
+// import HorizAnim from "./HorizAnim";
+import HorizAnimGroup from "./HorizAnimGroup";
 import VertLines from "./VertLines";
 
 function App() {
@@ -33,10 +35,13 @@ function App() {
           height={screenHeight}
           horizon={horizon}
         />
-        <HorizLines
+
+        <HorizAnimGroup
           width={screenWidth}
           height={screenHeight}
           horizon={horizon}
+          duration={15000}
+          total={22}
         />
       </header>
     </div>
