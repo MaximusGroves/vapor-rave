@@ -6,6 +6,7 @@ import useWindowSize from "./useWindowSize";
 // import HorizAnim from "./HorizAnim";
 import HorizAnimGroup from "./HorizAnimGroup";
 import VertLines from "./VertLines";
+import SpotifyPlayer from "react-spotify-player";
 
 function App() {
   const windowSize = useWindowSize();
@@ -35,7 +36,6 @@ function App() {
           height={screenHeight}
           horizon={horizon}
         />
-
         <HorizAnimGroup
           width={screenWidth}
           height={screenHeight}
@@ -43,6 +43,14 @@ function App() {
           duration={15000}
           total={22}
         />
+        <div style={{ position: "absolute", top: 0, right: 0 }}>
+          <SpotifyPlayer
+            uri="spotify:playlist:37i9dQZF1DXdLEN7aqioXM?si=7b081c1ccf4a4b5d"
+            size={{ width: 300, height: 80 }}
+            view={"list"} //or coverart
+            theme={"black"}
+          />
+        </div>
       </header>
     </div>
   );
