@@ -2,6 +2,7 @@
 // import Logo from "./Logo";
 import Sunset from "./Sunset";
 import "./App.css";
+import "./stars.css";
 import React from "react";
 import useWindowSize from "./useWindowSize";
 //import HorizLines from "./HorizLines";
@@ -22,6 +23,7 @@ function App() {
     screenHeight >= 1400 ? screenHeight - 1400 * 0.45 : screenHeight * 0.55;
 
   const horizonNudge = 60;
+  const textNudge = 200;
 
   return (
     <div
@@ -54,8 +56,12 @@ function App() {
           />
         </div>
       </header>
-      <body>
-        <Sunset horizon={horizon} horizonNudge={horizonNudge} />
+      <body style={{ zIndex: 9997 }}>
+        <Sunset
+          horizon={horizon}
+          horizonNudge={horizonNudge}
+          textNudge={textNudge}
+        />
 
         <VertLines
           width={screenWidth}
@@ -70,6 +76,10 @@ function App() {
           total={22}
         />
       </body>
+      {/* <div style={{ zIndex: 9996 }}>
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+      </div> */}
     </div>
   );
 }
