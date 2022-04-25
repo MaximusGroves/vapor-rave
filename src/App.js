@@ -1,4 +1,6 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
+// import Logo from "./Logo";
+import Sunset from "./Sunset";
 import "./App.css";
 import React from "react";
 import useWindowSize from "./useWindowSize";
@@ -8,6 +10,7 @@ import HorizAnimGroup from "./HorizAnimGroup";
 import VertLines from "./VertLines";
 import SpotifyPlayer from "react-spotify-player";
 import GithubIcon from "./GithubIcon";
+// import SVG from "react-inlinesvg";
 
 function App() {
   const windowSize = useWindowSize();
@@ -17,6 +20,8 @@ function App() {
 
   const horizon =
     screenHeight >= 1400 ? screenHeight - 1400 * 0.45 : screenHeight * 0.55;
+
+  const horizonNudge = 60;
 
   return (
     <div
@@ -50,7 +55,8 @@ function App() {
         </div>
       </header>
       <body>
-        <img src={logo} className="App-logo" alt="logo" />
+        <Sunset horizon={horizon} horizonNudge={horizonNudge} />
+
         <VertLines
           width={screenWidth}
           height={screenHeight}

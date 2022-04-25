@@ -3,15 +3,14 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 400px;
   pointer-events: none;
+  filter: drop-shadow(10px 10px 200px #ff0) drop-shadow(-10px -10px 50px #f0f);
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-    position: absolute;
-    top: 5%;
   }
 }
 
