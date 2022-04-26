@@ -4,7 +4,7 @@
 
 [Performance Mode](https://www.vaporraver.com?mobile=true)
 
-I log on every couple days to add a visual effect to the create-react-app sample page
+I log on every couple days to add a visual effect to the create-react-app sample page. Performance mode probably looks better.
 
 Compare it to [create-react-app](https://62676ae4bad45235fa9b1a7b--steady-kataifi-93b146.netlify.app/)
 
