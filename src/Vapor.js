@@ -4,6 +4,7 @@ import Sunset from "./Sunset";
 import "./App.css";
 import "./stars.css";
 import "./shootingstar.scss";
+
 import React from "react";
 import useWindowSize from "./useWindowSize";
 //import HorizLines from "./HorizLines";
@@ -87,7 +88,14 @@ function Vapor() {
             />
           </div>
         </div>
-        <div className="bodySection" style={{ zIndex: 9997 }}>
+        <div
+          className="bodySection"
+          style={{
+            zIndex: 9997,
+            webkitFilter: "saturate(1.1) contrast(1.5)",
+            filter: "saturate(1.1) contrast(1.5)",
+          }}
+        >
           <Sunset
             horizon={horizon}
             horizonNudge={horizonNudge}
