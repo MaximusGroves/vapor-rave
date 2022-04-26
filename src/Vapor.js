@@ -12,7 +12,7 @@ import VertLines from "./VertLines";
 import SpotifyPlayer from "react-spotify-player";
 import GithubIcon from "./GithubIcon";
 // import SVG from "react-inlinesvg";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { IconButton } from "@mui/material";
 // import InstallMobile from "@mui/icons-material/InstallMobile";
 import DesktopMacIcon from "@mui/icons-material/DesktopMac";
