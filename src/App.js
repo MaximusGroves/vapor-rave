@@ -73,7 +73,7 @@ function App() {
           height={screenHeight}
           horizon={horizon}
           duration={15000}
-          total={22}
+          total={20}
         />
       </body>
       {/* <div style={{ zIndex: 9996 }}>
