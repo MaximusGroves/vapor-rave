@@ -11,8 +11,6 @@ const HorizAnim = ({
   duration = 1000,
   mobile = false,
 }) => {
-  console.log("horizAnim");
-
   const logYFunc = (val) => 150 * Math.log(val * 7) + (50 - val) * 2;
   const at40 = logYFunc(39);
 
