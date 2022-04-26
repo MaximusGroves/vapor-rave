@@ -14,6 +14,15 @@
   }
 }
 
+@media (max-width: 600px) {
+  .App-logo {
+    height: 300px;
+  }
+  .sun svg circle {
+    r: 150 !important;
+  }
+}
+
 .bodySection {
   background-color: hsl(210, 50%, 14%);
   min-height: 100vh;

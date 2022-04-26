@@ -14,15 +14,7 @@ const Sunset = ({ horizon, horizonNudge, textNudge }) => {
   }));
 
   return (
-    <div
-      style={
-        {
-          // width: "100%",
-          // height: "100%",
-          // transform: "translate(-50%, -50%)",
-        }
-      }
-    >
+    <div>
       <div
         style={{
           zIndex: 0,
@@ -34,6 +26,7 @@ const Sunset = ({ horizon, horizonNudge, textNudge }) => {
           filter:
             "drop-shadow(10px 10px 900px rgba(255,255,0,0.3)) drop-shadow(10px 10px 90px #ff0) drop-shadow(-10px -10px 25px #ff0)",
         }}
+        className='sun'
       >
         <svg width={1000} height={1000}>
           <circle cx={500} cy={500} r={200} fill="#ff0" stroke="#ff0" />
