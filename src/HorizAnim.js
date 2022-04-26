@@ -3,7 +3,16 @@ import "./App.css";
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-const HorizAnim = ({ width, height, horizon, start = 0, duration = 1000 }) => {
+const HorizAnim = ({
+  width,
+  height,
+  horizon,
+  start = 0,
+  duration = 1000,
+  mobile = false,
+}) => {
+  console.log("horizAnim");
+
   const logYFunc = (val) => 150 * Math.log(val * 7) + (50 - val) * 2;
   const at40 = logYFunc(39);
 
@@ -44,25 +53,49 @@ const HorizAnim = ({ width, height, horizon, start = 0, duration = 1000 }) => {
   }));
 
   return (
-    <div style={{ position: "absolute", top: horizon, left: 0 }}>
-      <animated.div
-        style={{
-          transform: x.to((x) => `translateY(${posFunction(x)}px)`),
-          strokeWidth: x.to((x) => `${(39 - x) / 10}`),
-          filter: x.to(
-            (x) => `
-              drop-shadow(${-x / 5}px ${x / 5}px ${x * 2}px ${glowColor})
-              drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
-              `
-          ),
-          stroke: stroke,
-        }}
-      >
-        <Svg width={width} height={height}>
-          <Line sy={0} ey={0} sx={0} ex={width || 0} />
-        </Svg>
-      </animated.div>
-    </div>
+    <animated.div
+      style={
+        mobile
+          ? {
+              //fewer transforms on mobile
+              transform: x.to((x) => `translateY(${posFunction(x)}px)`),
+              stroke: stroke,
+              strokeWidth: 3,
+              filter: x.to((x) =>
+                x < 35
+                  ? `
+                  drop-shadow(-5px -5px 2px ${glowColor})
+                  drop-shadow(5px 5px 2px ${glowColor})
+                  drop-shadow(-10px 10px 50px ${glowColor})
+                `
+                  : ""
+              ),
+              position: "absolute",
+              top: horizon,
+              left: 0,
+            }
+          : {
+              //more transforms on desktop
+              transform: x.to((x) => `translateY(${posFunction(x)}px)`),
+              stroke: stroke,
+              strokeWidth: x.to((x) => `${(39 - x) / 10}`),
+              filter: x.to(
+                (x) => `
+                  drop-shadow(${-x / 5}px ${x / 5}px ${x * 2}px ${glowColor})
+                  drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
+                  drop-shadow(4px -5px 5px ${glowColor})
+                  `
+              ),
+              position: "absolute",
+              top: horizon,
+              left: 0,
+            }
+      }
+    >
+      <Svg width={width} height={height}>
+        <Line sy={0} ey={0} sx={0} ex={width || 0} />
+      </Svg>
+    </animated.div>
   );
 };
 

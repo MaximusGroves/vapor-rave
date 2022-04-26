@@ -12,9 +12,18 @@ import VertLines from "./VertLines";
 import SpotifyPlayer from "react-spotify-player";
 import GithubIcon from "./GithubIcon";
 // import SVG from "react-inlinesvg";
+import { useSearchParams, Link } from "react-router-dom";
+import { IconButton } from "@mui/material";
+// import InstallMobile from "@mui/icons-material/InstallMobile";
+import DesktopMacIcon from "@mui/icons-material/DesktopMac";
+import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 
 function Vapor() {
   const windowSize = useWindowSize();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const mobile = searchParams.get("mobile");
+  const onMobile = mobile === "true";
 
   const screenWidth = windowSize.width || window.innerWidth;
   const screenHeight = windowSize.height || window.innerHeight;
@@ -38,15 +47,33 @@ function Vapor() {
           left: 0,
         }}
       >
-        <header className="App-header">
-          <div style={{ position: "absolute", top: 0, left: 0, zIndex: 9999 }}>
+        <div className="App-header">
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 9999,
+              display: "block",
+            }}
+          >
             <a
               href="https://github.com/MaximusGroves/vapor-rave"
               target="_blank"
               rel="noreferrer"
+              style={{ display: "block" }}
             >
               <GithubIcon />
             </a>
+            {onMobile ? (
+              <IconButton onClick={() => setSearchParams({})}>
+                <DesktopMacIcon color="inherit" style={{ color: "white" }} />
+              </IconButton>
+            ) : (
+              <IconButton onClick={() => setSearchParams({ mobile: "true" })}>
+                <PhoneAndroidIcon color="inherit" style={{ color: "white" }} />
+              </IconButton>
+            )}
           </div>
           <div style={{ position: "absolute", top: 0, right: 0, zIndex: 9998 }}>
             <SpotifyPlayer
@@ -56,8 +83,8 @@ function Vapor() {
               theme={"black"}
             />
           </div>
-        </header>
-        <body style={{ zIndex: 9997 }}>
+        </div>
+        <div className="bodySection" style={{ zIndex: 9997 }}>
           <Sunset
             horizon={horizon}
             horizonNudge={horizonNudge}
@@ -69,14 +96,17 @@ function Vapor() {
             height={screenHeight}
             horizon={horizon}
           />
+
           <HorizAnimGroup
+            key={onMobile}
             width={screenWidth}
             height={screenHeight}
             horizon={horizon}
             duration={15000}
-            total={20}
+            total={onMobile ? 10 : 20}
+            mobile={onMobile}
           />
-        </body>
+        </div>
         {/* <div style={{ zIndex: 9996 }}>
         <div class="stars"></div>
         <div class="twinkling"></div>

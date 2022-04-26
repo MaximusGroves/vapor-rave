@@ -1,7 +1,15 @@
 import React from "react";
 import HorizAnim from "./HorizAnim";
+import Horizon from "./Horizon";
 
-const HorizLines = ({ width, height, horizon, duration, total }) => {
+const HorizAnimGroup = ({
+  width,
+  height,
+  horizon,
+  duration,
+  total,
+  mobile,
+}) => {
   const separation = 40 / total;
 
   return (
@@ -14,11 +22,20 @@ const HorizLines = ({ width, height, horizon, duration, total }) => {
             horizon={horizon}
             start={val * separation}
             duration={duration}
+            mobile={mobile}
           />
         );
       })}
+      {mobile && (
+        <Horizon
+          width={width}
+          height={height}
+          horizon={horizon}
+          mobile={mobile}
+        />
+      )}
     </>
   );
 };
 
-export default HorizLines;
+export default HorizAnimGroup;

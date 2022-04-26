@@ -30,7 +30,9 @@ const Sunset = ({ horizon, horizonNudge, textNudge }) => {
           top: horizon - horizonNudge,
           left: "50%",
           transform: "translate(-50%, -50%)",
-          opacity: 0.5,
+          opacity: 0.7,
+          filter:
+            "drop-shadow(10px 10px 900px rgba(255,255,0,0.3)) drop-shadow(10px 10px 90px #ff0) drop-shadow(-10px -10px 25px #ff0)",
         }}
       >
         <svg width={1000} height={1000}>

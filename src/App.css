@@ -5,7 +5,7 @@
 .App-logo {
   height: 400px;
   pointer-events: none;
-  filter: drop-shadow(10px 10px 200px #ff0) drop-shadow(-10px -10px 50px #f0f);
+  filter: drop-shadow(10px 10px 200px #ff0) drop-shadow(-10px -10px 30px #f0f);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,7 +14,7 @@
   }
 }
 
-body {
+.bodySection {
   background-color: hsl(210, 50%, 14%);
   min-height: 100vh;
   display: flex;
