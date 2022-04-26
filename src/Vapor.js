@@ -70,11 +70,11 @@ function Vapor() {
             </a>
             {onMobile ? (
               <IconButton onClick={() => setSearchParams({})}>
-                <DesktopMacIcon color="inherit" style={{ color: "white" }} />
+                <PhoneAndroidIcon color="inherit" style={{ color: "white" }} />
               </IconButton>
             ) : (
               <IconButton onClick={() => setSearchParams({ mobile: "true" })}>
-                <PhoneAndroidIcon color="inherit" style={{ color: "white" }} />
+                <DesktopMacIcon color="inherit" style={{ color: "white" }} />
               </IconButton>
             )}
           </div>
