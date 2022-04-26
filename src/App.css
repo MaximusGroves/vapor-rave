@@ -24,7 +24,7 @@
 }
 
 .bodySection {
-  background-color: hsl(210, 50%, 14%);
+  /* background-color: hsl(210, 50%, 14%); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;

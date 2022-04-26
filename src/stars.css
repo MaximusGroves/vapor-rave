@@ -1,35 +1,35 @@
 @keyframes move-background {
   from {
-    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, -10px);
   }
   to {
-    -webkit-transform: translate3d(1000px, 0px, 0px);
+    -webkit-transform: translate3d(1000px, 0px, -10px);
   }
 }
 @-webkit-keyframes move-background {
   from {
-    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, -10px);
   }
   to {
-    -webkit-transform: translate3d(1000px, 0px, 0px);
+    -webkit-transform: translate3d(1000px, 0px, -10px);
   }
 }
 
 @-moz-keyframes move-background {
   from {
-    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, -10px);
   }
   to {
-    -webkit-transform: translate3d(1000px, 0px, 0px);
+    -webkit-transform: translate3d(1000px, 0px, -10px);
   }
 }
 
 @-webkit-keyframes move-background {
   from {
-    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-transform: translate3d(0px, 0px, -10px);
   }
   to {
-    -webkit-transform: translate3d(1000px, 0px, 0px);
+    -webkit-transform: translate3d(1000px, 0px, -10px);
   }
 }
 
@@ -41,7 +41,7 @@
   right: 0;
 }
 
-.stars {
+.starImg {
   background: black
     url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
   position: absolute;
@@ -50,7 +50,7 @@
   left: 0;
   right: 0;
   display: block;
-  /* z-index: 0; */
+  z-index: -10;
 }
 
 .twinkling {
@@ -64,7 +64,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  /* z-index: 2; */
+  z-index: -9;
 
   -moz-animation: move-background 70s linear infinite;
   -ms-animation: move-background 70s linear infinite;

@@ -3,6 +3,7 @@
 import Sunset from "./Sunset";
 import "./App.css";
 import "./stars.css";
+import "./shootingstar.scss";
 import React from "react";
 import useWindowSize from "./useWindowSize";
 //import HorizLines from "./HorizLines";
@@ -33,6 +34,8 @@ function Vapor() {
 
   const horizonNudge = 60;
   const textNudge = 200;
+
+  const starTotal = 10;
 
   return (
     <React.Fragment>
@@ -107,10 +110,15 @@ function Vapor() {
             mobile={onMobile}
           />
         </div>
-        {/* <div style={{ zIndex: 9996 }}>
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-      </div> */}
+        <div style={{ zIndex: 9996 }}>
+          <div class="starImg"></div>
+          <div class="twinkling"></div>
+          <div class="stars">
+            {[...Array(starTotal).keys()].map((val) => (
+              <div class="star" />
+            ))}
+          </div>
+        </div>
       </div>
     </React.Fragment>
   );
