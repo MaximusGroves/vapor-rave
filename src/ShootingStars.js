@@ -1,13 +1,18 @@
 import React from "react";
 
+// ripped off from https://freefrontend.com/css-animated-backgrounds/
+// https://codepen.io/alphardex/pen/RwrVoeL
+
 const ShootingStars = ({ total, screenWidth, horizon }) => {
   return (
     <>
       {[...Array(total).keys()].map((val) => {
-        const startPos = (Math.random() * 3 - 1) * screenWidth;
+        
+        const startPos = (Math.random() * 2 - 0.5) * screenWidth;
         const distance = Math.abs(startPos - screenWidth / 2);
 
         const rad = Math.atan((screenWidth / 2 - startPos) / horizon);
+
         return (
           <div
             style={{

@@ -20,7 +20,7 @@
   --tail-fade-duration: var(--fall-duration);
 
   position: absolute;
-  top: -150px;
+  top: -20vh;
   width: var(--star-tail-height);
   height: var(--star-tail-length);
   color: var(--star-color);
@@ -28,26 +28,20 @@
   border-radius: 50%;
   filter: drop-shadow(0 0 6px currentColor);
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite,
-    tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
-
-  @include sp-layout {
-    // For mobile performance, tail-fade animation will be removed QAQ
-    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
-  }
+    tail-fade var(--fall-duration) var(--fall-delay) ease-out infinite;
 
   &::before,
   &::after {
     position: absolute;
     content: "";
-    top: calc(var(--star-tail-length) - 5px);
+    // top: calc(var(--star-tail-length) - 5px);
     left: 0;
     width: 100%;
     height: var(--star-width);
     background: linear-gradient(45deg, transparent, currentColor, transparent);
     border-radius: inherit;
-    animation: slowDown var(--tail-fade-duration) var(--fall-delay) ease-out
-        infinite,
-      blink 2s linear infinite;
+    animation: slowDown var(--fall-duration) var(--fall-delay) ease-out infinite;
+    // blink var(--fall-duration) var(--fall-delay) linear infinite;
   }
 
   &::before {
@@ -77,33 +71,16 @@
     height: 0;
     opacity: 0.4;
   }
-
-  100% {
-    height: 0;
-    opacity: 0;
-  }
 }
 
 @keyframes slowDown {
   0%,
   50% {
-    top: calc(var(--star-tail-length) - 5px);
+    top: calc(var(--star-tail-length) * 0.9);
   }
 
   70%,
   80% {
-    top: 0;
-  }
-
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    // height: calc(0.5 * var(--star-tail-length));
-    // transform: translateY(calc(-0.25 * var(--star-tail-length)));
-    opacity: 0.6;
+    top: -10px;
   }
 }

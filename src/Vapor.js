@@ -1,25 +1,18 @@
-// import logo from "./logo.svg";
-// import Logo from "./Logo";
-import Sunset from "./Sunset";
+import React from "react";
+
 import "./App.css";
 import "./stars.css";
 import "./shootingstar.scss";
-import ShootingStars from "./ShootingStars";
 
-import React from "react";
-import useWindowSize from "./useWindowSize";
-//import HorizLines from "./HorizLines";
-// import HorizAnim from "./HorizAnim";
-import HorizAnimGroup from "./HorizAnimGroup";
+import HeaderStuff from "./HeaderStuff";
+import Sunset from "./Sunset";
 import VertLines from "./VertLines";
-import SpotifyPlayer from "react-spotify-player";
-import GithubIcon from "./GithubIcon";
-// import SVG from "react-inlinesvg";
+import HorizAnimGroup from "./HorizAnimGroup";
+import ShootingStars from "./ShootingStars";
+import StarScape from "./StarScape";
+
+import useWindowSize from "./useWindowSize";
 import { useSearchParams } from "react-router-dom";
-import { IconButton } from "@mui/material";
-// import InstallMobile from "@mui/icons-material/InstallMobile";
-import DesktopMacIcon from "@mui/icons-material/DesktopMac";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 
 function Vapor() {
   const windowSize = useWindowSize();
@@ -50,43 +43,8 @@ function Vapor() {
           left: 0,
         }}
       >
-        <div className="App-header">
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: 9999,
-              display: "block",
-            }}
-          >
-            <a
-              href="https://github.com/MaximusGroves/vapor-rave"
-              target="_blank"
-              rel="noreferrer"
-              style={{ display: "block" }}
-            >
-              <GithubIcon />
-            </a>
-            {onMobile ? (
-              <IconButton onClick={() => setSearchParams({})}>
-                <PhoneAndroidIcon color="inherit" style={{ color: "white" }} />
-              </IconButton>
-            ) : (
-              <IconButton onClick={() => setSearchParams({ mobile: "true" })}>
-                <DesktopMacIcon color="inherit" style={{ color: "white" }} />
-              </IconButton>
-            )}
-          </div>
-          <div style={{ position: "absolute", top: 0, right: 0, zIndex: 9998 }}>
-            <SpotifyPlayer
-              uri="spotify:playlist:37i9dQZF1DXdLEN7aqioXM?si=7b081c1ccf4a4b5d"
-              size={{ width: 300, height: 80 }}
-              view={"list"} //or coverart
-              theme={"black"}
-            />
-          </div>
-        </div>
+        <HeaderStuff onMobile={onMobile} setSearchParams={setSearchParams} />
+
         <div
           className="bodySection"
           style={{
@@ -116,17 +74,6 @@ function Vapor() {
             total={onMobile ? 10 : 20}
             mobile={onMobile}
           />
-        </div>
-        <div style={{ zIndex: 9996 }}>
-          <div class="twinkling"></div>
-          <div
-            class="starImg"
-            style={{
-              backgroundPosition: `${Math.random() * 100}% ${
-                Math.random() * 100
-              }%`,
-            }}
-          ></div>
 
           <ShootingStars
             total={100}
@@ -134,6 +81,8 @@ function Vapor() {
             horizon={horizon - horizonNudge}
           />
         </div>
+
+        <StarScape />
       </div>
     </React.Fragment>
   );
