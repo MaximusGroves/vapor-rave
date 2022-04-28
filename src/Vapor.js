@@ -4,6 +4,7 @@ import Sunset from "./Sunset";
 import "./App.css";
 import "./stars.css";
 import "./shootingstar.scss";
+import ShootingStars from "./ShootingStars";
 
 import React from "react";
 import useWindowSize from "./useWindowSize";
@@ -36,15 +37,13 @@ function Vapor() {
   const horizonNudge = 60;
   const textNudge = 200;
 
-  const starTotal = 10;
-
   return (
     <React.Fragment>
       <div
         className="App"
         style={{
-          width: windowSize.width,
-          height: windowSize.height,
+          width: screenWidth,
+          height: screenHeight,
           overflow: "hidden",
           position: "absolute",
           top: 0,
@@ -119,13 +118,21 @@ function Vapor() {
           />
         </div>
         <div style={{ zIndex: 9996 }}>
-          <div class="starImg"></div>
           <div class="twinkling"></div>
-          <div class="stars">
-            {[...Array(starTotal).keys()].map((val) => (
-              <div class="star" />
-            ))}
-          </div>
+          <div
+            class="starImg"
+            style={{
+              backgroundPosition: `${Math.random() * 100}% ${
+                Math.random() * 100
+              }%`,
+            }}
+          ></div>
+
+          <ShootingStars
+            total={100}
+            screenWidth={screenWidth}
+            horizon={horizon - horizonNudge}
+          />
         </div>
       </div>
     </React.Fragment>
