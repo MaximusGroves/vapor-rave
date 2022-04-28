@@ -9,7 +9,7 @@ const HorizAnim = ({
   horizon,
   start = 0,
   duration = 1000,
-  mobile = false,
+  onMobile = false,
 }) => {
   const logYFunc = (val) => 150 * Math.log(val * 7) + (50 - val) * 2;
   const at40 = logYFunc(39);
@@ -53,7 +53,7 @@ const HorizAnim = ({
   return (
     <animated.div
       style={
-        mobile
+        onMobile
           ? {
               //fewer transforms on mobile
               transform: x.to((x) => `translateY(${posFunction(x)}px)`),
@@ -78,11 +78,14 @@ const HorizAnim = ({
               stroke: stroke,
               strokeWidth: x.to((x) => `${(39 - x) / 10}`),
               filter: x.to(
-                (x) => `
-                  drop-shadow(${-x / 5}px ${x / 5}px ${x * 2}px ${glowColor})
-                  drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
-                  drop-shadow(4px -5px 5px ${glowColor})
-                  `
+                (x) =>
+                  `drop-shadow(-5px -5px 2px ${glowColor})
+                  drop-shadow(5px 5px 2px ${glowColor})
+                  drop-shadow(-10px 10px 50px ${glowColor})`
+                // `
+                //   drop-shadow(${-x / 5}px ${x / 5}px ${x * 2}px ${glowColor})
+                //   drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
+                //   drop-shadow(4px -5px 5px ${glowColor})`
               ),
               position: "absolute",
               top: horizon,

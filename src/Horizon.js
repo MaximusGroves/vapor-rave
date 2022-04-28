@@ -3,7 +3,7 @@ import "./App.css";
 import React from "react";
 import { useSpring, animated } from "react-spring";
 
-const Horizon = ({ width, height, horizon, mobile = false }) => {
+const Horizon = ({ width, height, horizon }) => {
   const glowColor = "#ff00ff";
 
   const [{ stroke }] = useSpring(() => ({

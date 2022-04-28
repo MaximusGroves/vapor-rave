@@ -8,7 +8,7 @@ const HorizAnimGroup = ({
   horizon,
   duration,
   total,
-  mobile,
+  onMobile,
 }) => {
   const separation = 40 / total;
 
@@ -22,18 +22,11 @@ const HorizAnimGroup = ({
             horizon={horizon}
             start={val * separation}
             duration={duration}
-            mobile={mobile}
+            onMobile={onMobile}
           />
         );
       })}
-      {mobile && (
-        <Horizon
-          width={width}
-          height={height}
-          horizon={horizon}
-          mobile={mobile}
-        />
-      )}
+      {onMobile && <Horizon width={width} height={height} horizon={horizon} />}
     </>
   );
 };

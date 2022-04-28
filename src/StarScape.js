@@ -5,7 +5,7 @@ import React from "react";
 
 import { useSpring, animated } from "react-spring";
 
-const StarScape = () => {
+const StarScape = ({ onMobile }) => {
   const [{ x }] = useSpring(() => ({
     loop: true,
 
@@ -19,9 +19,9 @@ const StarScape = () => {
       <animated.div
         class="starImg"
         style={{
-          backgroundPosition: x.to(
-            (x) => `${Math.cos(x) * 100}% ${Math.sin(x) * 100}%`
-          ),
+          backgroundPosition: onMobile
+            ? `${Math.random() * 100}% ${Math.random() * 100}%`
+            : x.to((x) => `${Math.cos(x) * 100}% ${Math.sin(x) * 100}%`),
         }}
       ></animated.div>
     </div>

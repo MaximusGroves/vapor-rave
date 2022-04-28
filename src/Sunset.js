@@ -5,7 +5,7 @@ import { useSpring, animated, easings } from "react-spring";
 
 const reactBlue = "#61DAFB";
 
-const Sunset = ({ horizon, horizonNudge, textNudge }) => {
+const Sunset = ({ horizon, horizonNudge, textNudge, onMobile }) => {
   const [{ fill }] = useSpring(() => ({
     from: { fill: reactBlue },
     to: { fill: "#000000" },
@@ -37,7 +37,13 @@ const Sunset = ({ horizon, horizonNudge, textNudge }) => {
         className="sun"
       >
         <svg width={1000} height={1000}>
-          <animated.circle cx={500} cy={500} r={r} fill="#ff0" stroke="#ff0" />
+          <animated.circle
+            cx={500}
+            cy={500}
+            r={onMobile ? 200 : r}
+            fill="#ff0"
+            stroke="#ff0"
+          />
         </svg>
       </div>
       <animated.div

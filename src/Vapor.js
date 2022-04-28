@@ -57,6 +57,7 @@ function Vapor() {
             horizon={horizon}
             horizonNudge={horizonNudge}
             textNudge={textNudge}
+            onMobile={onMobile}
           />
 
           <VertLines
@@ -71,8 +72,8 @@ function Vapor() {
             height={screenHeight}
             horizon={horizon}
             duration={15000}
-            total={onMobile ? 10 : 20}
-            mobile={onMobile}
+            total={onMobile ? 10 : 15}
+            onMobile={onMobile}
           />
 
           <ShootingStars
@@ -82,7 +83,7 @@ function Vapor() {
           />
         </div>
 
-        <StarScape />
+        <StarScape onMobile={onMobile} />
       </div>
     </React.Fragment>
   );
