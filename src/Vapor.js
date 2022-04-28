@@ -76,7 +76,7 @@ function Vapor() {
           />
 
           <ShootingStars
-            total={100}
+            total={onMobile ? 25 : 100}
             screenWidth={screenWidth}
             horizon={horizon - horizonNudge}
           />
