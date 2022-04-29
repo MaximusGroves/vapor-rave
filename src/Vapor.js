@@ -77,13 +77,13 @@ function Vapor() {
           />
 
           <ShootingStars
-            total={onMobile ? 25 : 100}
+            total={100}
             screenWidth={screenWidth}
             horizon={horizon - horizonNudge}
           />
         </div>
 
-        <StarScape onMobile={onMobile} />
+        <StarScape onMobile={false} />
       </div>
     </React.Fragment>
   );

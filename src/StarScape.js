@@ -7,12 +7,13 @@ import { useSpring, animated } from "react-spring";
 
 const StarScape = ({ onMobile }) => {
   const [{ x }] = useSpring(() => ({
-    loop: true,
+    loop: onMobile,
 
     from: { x: 0 },
     to: { x: 2 * Math.PI },
     config: { duration: 60000 },
   }));
+
   return (
     <div style={{ zIndex: 9996 }}>
       <div class="twinkling"></div>

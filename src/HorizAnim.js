@@ -77,16 +77,13 @@ const HorizAnim = ({
               transform: x.to((x) => `translateY(${posFunction(x)}px)`),
               stroke: stroke,
               strokeWidth: x.to((x) => `${(39 - x) / 10}`),
-              filter: x.to(
-                (x) =>
-                  `drop-shadow(-5px -5px 2px ${glowColor})
+              filter: `drop-shadow(-5px -5px 2px ${glowColor})
                   drop-shadow(5px 5px 2px ${glowColor})
-                  drop-shadow(-10px 10px 50px ${glowColor})`
-                // `
-                //   drop-shadow(${-x / 5}px ${x / 5}px ${x * 2}px ${glowColor})
-                //   drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
-                //   drop-shadow(4px -5px 5px ${glowColor})`
-              ),
+                  drop-shadow(-10px 10px 50px ${glowColor})`,
+              // `
+              //   drop-shadow(${-x / 5}px ${x / 5}px ${x * 2}px ${glowColor})
+              //   drop-shadow(-${x / 5}px ${x / 5}px ${x}px ${glowColor})
+              //   drop-shadow(4px -5px 5px ${glowColor})`
               position: "absolute",
               top: horizon,
               left: 0,
