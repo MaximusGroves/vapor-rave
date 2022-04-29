@@ -8,7 +8,7 @@ const GithubIcon = () => (
     version="1.1"
     width="32"
     data-view-component="true"
-    class="octicon octicon-mark-github v-align-middle"
+    className="octicon octicon-mark-github v-align-middle"
   >
     <path
       fill-rule="evenodd"

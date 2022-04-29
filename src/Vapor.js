@@ -2,6 +2,7 @@ import React from "react";
 
 import "./App.css";
 import "./stars.css";
+import "./bubbles.scss";
 import "./shootingstar.scss";
 
 import HeaderStuff from "./HeaderStuff";
@@ -9,6 +10,7 @@ import Sunset from "./Sunset";
 import VertLines from "./VertLines";
 import HorizAnimGroup from "./HorizAnimGroup";
 import ShootingStars from "./ShootingStars";
+import Bubbles from "./Bubbles";
 import StarScape from "./StarScape";
 
 import useWindowSize from "./useWindowSize";
@@ -82,6 +84,8 @@ function Vapor() {
             horizon={horizon - horizonNudge}
           />
         </div>
+
+        <Bubbles />
 
         <StarScape onMobile={false} />
       </div>

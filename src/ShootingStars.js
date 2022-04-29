@@ -7,7 +7,6 @@ const ShootingStars = ({ total, screenWidth, horizon }) => {
   return (
     <>
       {[...Array(total).keys()].map((val) => {
-        
         const startPos = (Math.random() * 2 - 0.5) * screenWidth;
         const distance = Math.abs(startPos - screenWidth / 2);
 
@@ -35,7 +34,6 @@ const ShootingStars = ({ total, screenWidth, horizon }) => {
           </div>
         );
       })}
-      ;
     </>
   );
 };
