@@ -7,7 +7,7 @@ const Bubbles = () => (
   <div
     className="container"
     style={{
-      zIndex: 9998,
+      zIndex: 9997,
       position: "absolute",
       top: 0,
       left: 0,
