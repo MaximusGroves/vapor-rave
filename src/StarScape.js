@@ -7,7 +7,7 @@ import { useSpring, animated } from "react-spring";
 
 const StarScape = ({ onMobile }) => {
   const [{ x }] = useSpring(() => ({
-    loop: onMobile,
+    loop: !onMobile,
 
     from: { x: 0 },
     to: { x: 2 * Math.PI },
